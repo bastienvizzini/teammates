@@ -2,4 +2,7 @@
     <string name="app_name">Teammates</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="messages_title">Messages</string>
+    <string name="explore_title">Explore</string>
+    <string name="username">Username</string>
 </resources>

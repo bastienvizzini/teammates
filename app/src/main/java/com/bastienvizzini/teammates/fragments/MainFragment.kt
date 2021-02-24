@@ -1,10 +1,11 @@
-package com.bastienvizzini.teammates
+package com.bastienvizzini.teammates.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bastienvizzini.teammates.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainFragment : Fragment() {
