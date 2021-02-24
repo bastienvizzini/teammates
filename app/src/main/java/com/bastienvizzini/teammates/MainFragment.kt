@@ -27,6 +27,11 @@ class MainFragment : Fragment() {
 
         bottomNavigation = view.findViewById(R.id.bottom_nav_bar)
         bottomNavigation.setOnNavigationItemSelectedListener(bottomNavMethod)
+
+        // To start the app with right tab and keeping active tab with screen rotation
+        if (savedInstanceState == null) {
+            fragmentManager?.beginTransaction()?.replace(R.id.tab_container, mMessagesFragment)?.commit()
+        }
     }
 
     private val bottomNavMethod = BottomNavigationView.OnNavigationItemSelectedListener { menuItem ->
