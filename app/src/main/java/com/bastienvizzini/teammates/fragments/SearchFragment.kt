@@ -9,20 +9,19 @@ import androidx.lifecycle.ViewModelProviders
 import com.bastienvizzini.teammates.R
 import com.bastienvizzini.teammates.viewmodel.MainViewModel
 
-class ExploreFragment : Fragment() {
+
+class SearchFragment : Fragment() {
 
     companion object {
-        fun newInstance() = ExploreFragment()
+        fun newInstance() = SearchFragment()
     }
 
     private lateinit var viewModel: MainViewModel
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_explore, container, false)
+        return inflater.inflate(R.layout.fragment_search, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -30,7 +29,7 @@ class ExploreFragment : Fragment() {
         activity?.run {
             viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         } ?: throw Throwable("Invalid activity")
-        viewModel.updateActionBarTitle(getString(R.string.explore_title))
+        viewModel.updateActionBarTitle(getString(R.string.search_title))
     }
 
 }

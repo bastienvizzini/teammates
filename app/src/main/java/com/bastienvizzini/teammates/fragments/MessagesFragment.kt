@@ -5,13 +5,21 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bastienvizzini.teammates.R
 import com.bastienvizzini.teammates.adapters.MessageListAdapter
 import com.bastienvizzini.teammates.models.Message
+import com.bastienvizzini.teammates.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.fragment_messages.*
 
 class MessagesFragment : Fragment() {
+
+    companion object {
+        fun newInstance() = MessagesFragment()
+    }
+
+    private lateinit var viewModel: MainViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,7 +42,14 @@ class MessagesFragment : Fragment() {
         val mAdapter = MessageListAdapter(requireContext(), mMessageList)
         messagesRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         messagesRecyclerView.adapter = mAdapter
+    }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        activity?.run {
+            viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
+        } ?: throw Throwable("Invalid activity")
+        viewModel.updateActionBarTitle(getString(R.string.messages_title))
     }
 
 }

@@ -11,4 +11,9 @@
         android:title="@string/explore_title"
         android:icon="@drawable/ic_explore" />
 
+    <item
+        android:id="@+id/search"
+        android:title="@string/search_title"
+        android:icon="@drawable/ic_search" />
+
 </menu>

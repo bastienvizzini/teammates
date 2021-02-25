@@ -5,4 +5,6 @@
     <string name="messages_title">Messages</string>
     <string name="explore_title">Explore</string>
     <string name="username">Username</string>
+    <string name="search_title">Search</string>
+    <string name="coming_soon">Coming soon</string>
 </resources>

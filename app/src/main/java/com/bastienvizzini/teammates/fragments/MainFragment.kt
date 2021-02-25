@@ -13,8 +13,9 @@ class MainFragment : Fragment() {
     private lateinit var bottomNavigation: BottomNavigationView
 
     // Fragments
-    private val mMessagesFragment = MessagesFragment()
-    private val mExploreFragment = ExploreFragment()
+    private val mMessagesFragment = MessagesFragment.newInstance()
+    private val mExploreFragment = ExploreFragment.newInstance()
+    private val mSearchFragment = SearchFragment.newInstance()
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -44,6 +45,9 @@ class MainFragment : Fragment() {
             }
             R.id.explore -> {
                 fragment = mExploreFragment
+            }
+            R.id.search -> {
+                fragment = mSearchFragment
             }
         }
 
